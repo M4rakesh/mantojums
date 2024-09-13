@@ -1,35 +1,38 @@
-class Person:
-    def __init__(self,name,age):
-        self.name = name
-        self.age = age
-        print("Person created")
+'''class Person:
+    def can_walk(self):
+        print("Es prot stāigat")
+    def can_talk(self):
+        print("Es protu runat")
+class Docto:
+    def can_cure(self):
+        print("Es protu ārstēt")
     
-    def say_hello(self):
-        print(f"{self.name} says Hello!")
+class Arhitect:
+    def can_build(self):
+        print("Es protu celt mājas")
+    
+d=Docto()
+a=Arhitect()
+print(issubclass(Docto,Person))
+print(issubclass(Person,Docto))'''
 
-class Student(Person):
-    def __init__(self, name, age,average_grade):
-        #Person.__init__(self,name, age)
-        super().__init__(self,name, age)
-        self.average_grade = average_grade
-        print("Studet created")
-    def study(self):
-        print(f"{self.name} studies")
-    def say_hello(self):
-        print(f"Studet with name:{self.name} says Hello!")
-class Teacher(Person):
-    def teach(self):
-        print(f"{self.name} teaches")
-def introduce(person):
-    print("Now, a person will say hello")
-    person.say_hello()
-people_arr=[Student("Tom",15,4.5),Teacher("Katy",37)]
 
-for person in people_arr:
-    introduce(person)
-p1=Student("Tom",15,4.5)
-p1.say_hello()
-t1=Teacher("Katy",37)
-t1.say_hello()
-p1.study()
-t1.teach()
+print("sdfs")
+class Trans:
+    def __init__(self,marka,model,maxspeed):
+        self.marka = marka
+        self.model = model
+        self.maxspeed = maxspeed
+    def info(self):
+        print(f"Auto marka:{self.marka},Model:{self.model},maxspeed: {self.maxspeed}")
+class Auto(Trans):
+    def __init__(self,marka,model,maxspeed,deg_tips):
+        super().__init__(marka,model,maxspeed)
+        self.deg_tips = deg_tips
+    def info(self):
+        super().info()
+        print(f"Degvielas tips:{self.deg_tips}")
+v=Trans("toyta","corola",170)
+v.info()
+a=Auto("Mercedes-Benz","e320",240,"Benzīns")
+a.info()
